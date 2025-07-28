@@ -1,0 +1,101 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#game {
+    width: 600px;
+    height: 580px;
+    border:1px solid black;
+    margin: auto;
+    position: relative;
+}
+#sky {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    background-image: url('assets/background.jpeg');
+    background-size: cover;
+    background-position: center bottom;
+}
+#ground {
+    width: 100%;
+    height: 80px;
+    background-image: url('assets/road.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+#pipe-container {
+    position: absolute;
+    left: 600px;
+    width: 50px;
+    animation: movePipe 3s infinite linear;
+    animation-delay: 3s;
+    visibility: hidden;
+    animation-fill-mode: forwards;
+}
+
+@keyframes movePipe {
+    0% { left: 600px; visibility: visible; }
+    100% { left: -60px; }
+}
+
+.pipe {
+  width: 50px;
+  background: linear-gradient(to bottom, #1a1a1a, #590303);
+  box-shadow:
+    0 0 15px rgba(0, 0, 0, 0.3),  /* blood-like red glow */
+    inset 0 0 50px rgba(0, 0, 0, 0.8); /* inner darkness */
+  border: 2px solid #000000;
+}
+
+
+#pipe-top {
+    height: 200px; 
+}
+
+#pipe-bottom {
+    height: 200px; 
+    position: relative;
+    top: 150px; 
+}
+
+#character{
+    width: 60px;
+    height: 60px;
+    background-image: url('assets/yjh.png');
+    background-size: cover;
+    position: absolute;
+    top: 100px;
+    left:80px;
+}
+body {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+
+#character, .pipe {
+    z-index: 10;
+}
+@font-face {
+    font-family: GothicPixels;
+    src: url('assets/sega_arcade/SegaArcadeFont-Regular.ttf') format('truetype');
+}
+#score { 
+    font-family: 'Sega Arcade','Press Start 2P', cursive;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 8px 14px;
+    background-color: rgb(5, 210, 246);
+    border: 2px solid #85d8ff;
+    border-radius: 2px;
+    font-size: 16px;
+    font-weight: bolder;
+    color: rgb(227, 252, 255);
+    box-shadow: 3px 4px #ffffff;
+    text-shadow: 1px 1px #1776a3;
+    z-index: 99;
+}
